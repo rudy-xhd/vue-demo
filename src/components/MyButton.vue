@@ -1,7 +1,6 @@
 <script lang="ts">
 import { defineComponent } from "vue-ts-utils";
-import type { ButtonProps } from "element-plus";
-import { ElButton } from "element-plus";
+import type { ButtonHTMLAttributes } from "vue";
 export default defineComponent(
   {
     inheritAttrs: false,
@@ -9,14 +8,14 @@ export default defineComponent(
       console.log(this.$attrs);
     },
   },
-  { attrs: {} as Partial<ButtonProps> }
+  { attrs: {} as ButtonHTMLAttributes }
 );
 </script>
 
 <template>
   <div class="btn-wrapper">
     hello
-    <ElButton class="btn" v-bind="$attrs"><slot></slot></ElButton>
+    <button class="btn" v-bind="$attrs"><slot></slot></button>
   </div>
 </template>
 

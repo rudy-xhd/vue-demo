@@ -13,7 +13,7 @@ import MyButton from "./components/MyButton.vue";
     />
 
     <div class="wrapper">
-      <MyButton type="warning">my-button</MyButton>
+      <MyButton type="submit">my-button</MyButton>
 
       <!-- ts will throw error -->
       <!-- <MyButton type="111">my-button</MyButton> -->
