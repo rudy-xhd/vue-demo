@@ -1,22 +1,22 @@
 <script lang="ts">
 import { defineComponent } from "vue-ts-utils";
-import type { ButtonHTMLAttributes } from "vue";
-
+import type { ButtonProps } from "element-plus";
+import { ElButton } from "element-plus";
 export default defineComponent(
   {
     inheritAttrs: false,
     created() {
-      console.log(this.$attrs)
-    }
+      console.log(this.$attrs);
+    },
   },
-  { attrs: {} as ButtonHTMLAttributes }
+  { attrs: {} as Partial<ButtonProps> }
 );
 </script>
 
 <template>
   <div class="btn-wrapper">
     hello
-    <button class="btn" v-bind="$attrs"><slot></slot></button>
+    <ElButton class="btn" v-bind="$attrs"><slot></slot></ElButton>
   </div>
 </template>
 
