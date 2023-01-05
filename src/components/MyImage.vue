@@ -1,21 +1,21 @@
 <script lang="ts">
 import { defineComponent } from "vue-ts-utils";
-import type { ButtonHTMLAttributes } from "vue";
+import type { ImgHTMLAttributes } from "vue";
 export default defineComponent(
   {
     inheritAttrs: false,
     created() {
-      console.log(this.$attrs);
+      console.log("$attrs:", this.$attrs);
     },
   },
-  { attrs: {} as ButtonHTMLAttributes }
+  { attrs: {} as ImgHTMLAttributes }
 );
 </script>
 
 <template>
   <div class="btn-wrapper">
     hello
-    <button class="btn" v-bind="$attrs"><slot></slot></button>
+    <img class="btn" v-bind="$attrs" />
   </div>
 </template>
 

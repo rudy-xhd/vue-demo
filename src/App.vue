@@ -1,22 +1,22 @@
 <script setup lang="ts">
-import MyButton from "./components/MyButton.vue";
+import MyImage from "./components/MyImage.vue";
+const onLoad = (e: Event) => {
+  console.log("load: ", e);
+};
+const onError = (e: Event) => {
+  console.log("error: ", e);
+};
 </script>
 
 <template>
   <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="./assets/logo.svg"
-      width="125"
-      height="125"
-    />
-
     <div class="wrapper">
-      <MyButton type="submit">my-button</MyButton>
+      <MyImage
+        src="https://avatars.githubusercontent.com/u/6128107?s=200&v=4"
+        v-on:load="onLoad"
+      ></MyImage>
 
-      <!-- ts will throw error -->
-      <!-- <MyButton type="111">my-button</MyButton> -->
+      <MyImage src="error.png" v-on:error="onError"></MyImage>
     </div>
   </header>
 </template>
